@@ -4,8 +4,6 @@ import static org.assertj.core.api.Assertions.*;
 
 import org.junit.Test;
 
-import pl.joannazysiak.java8examples.lambda.ConverterAsFunctionalInterface.B;
-import pl.joannazysiak.java8examples.lambda.ConverterAsFunctionalInterface.ConvertedType;
 
 public class ConverterAsFunctionalInterfaceTest {
 
