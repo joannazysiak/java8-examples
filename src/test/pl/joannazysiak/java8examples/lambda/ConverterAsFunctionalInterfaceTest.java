@@ -1,17 +1,31 @@
 package pl.joannazysiak.java8examples.lambda;
 
 import static org.assertj.core.api.Assertions.*;
+
 import org.junit.Test;
+
+import pl.joannazysiak.java8examples.lambda.ConverterAsFunctionalInterface.B;
+import pl.joannazysiak.java8examples.lambda.ConverterAsFunctionalInterface.ConvertedType;
 
 public class ConverterAsFunctionalInterfaceTest {
 
 	@Test
-	public void shouldConvert() {
+	public void shouldConvertWithArgumentBody() {
 	
 		ConverterAsFunctionalInterface<Integer, String> converter = from -> Integer.toString(from);
 		
 		String result = converter.converTo(123);
 	
 		assertThat(result).isEqualTo("123");
+	}
+	
+	@Test
+	public void shouldConvertWithStaticMethodReference() {
+	
+		ConverterAsFunctionalInterface<String, Integer> converter = Integer::valueOf;
+		
+		Integer result = converter.converTo("123");
+	
+		assertThat(result).isEqualTo(123);
 	}
 }
